@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, 
+                         initial-scale=1.0"
+    />
+    <title>Cloud Project 1</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- container div -->
+    <div class="container">
+      <div class="slider"></div>
+      <div class="btn">
+        <button class="login">Login</button>
+        <button class="signup">Signup</button>
+      </div>
+
+      <div class="form-section">
+        <div class="login-box">
+          <form action="{{url_for('login')}}" method="POST">
+            <input type="text" class="email ele" placeholder="username" name="username"/>
+            <input
+             name="password"
+              type="password"
+              class="password ele"
+              placeholder="password"
+            />
+            <button class="clkbtn" type="submit">Login</button>
+          </form>
+        </div>
+
+        <div class="signup-box">
+          <form
+            action="{{url_for('registration')}}"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <input type="text" class="name ele" placeholder="username" name="username" />
+            <input
+             name="password"
+              type="password"
+              class="password ele"
+              placeholder="password"
+            />
+            <input
+              id="firstname"
+              name="firstname"
+              type="text"
+              class="ele"
+              placeholder="First Name"
+              autocomplete="off"
+            />
+            <input
+              id="lastname"
+              name="lastname"
+              type="text"
+              class="ele"
+              placeholder="Last Name"
+              autocomplete="off"
+            />
+            <input
+              name="email"
+              type="text"
+              class="email ele"
+              placeholder="youremail@email.com"
+            />
+
+            <label>Upload File : </label
+            ><input type="file" id="textfile" name="textfile" /><br /><br />
+            <button class="clkbtn" type="submit">Signup</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src={{ url_for('static',filename='js/index.js') }}></script>
+  </body>
+</html>
